@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khadar's Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center; /* Center children horizontally */
+            height: 100vh; /* Full height of the viewport */
+        }
+        .tab {
+            background-color: rgba(128, 128, 128, 0.9);
+            position: absolute; /* Positioning the tab */
+            top: 0; /* At the top */
+            left: 0; /* At the left */
+        }
+        .tab button {
+            background-color: inherit;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            color: #fff;
+        }
+        .tab button.active, .tab button:hover {
+            background-color: #666;
+        }
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            background-color: rgba(128, 128, 128, 0.9);
+            width: 80%; /* Set a max width for the content */
+            margin-top: 50px; /* Add space between the tabs and the content */
+            box-sizing: border-box;
+        }
+        .centered-message {
+            flex-grow: 1; /* Take up all available vertical space */
+            display: flex;
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            width: 100%; /* Full width */
+            padding: 0 20px; /* Padding on the sides */
+        }
+        footer {
+            background-color: rgba(128, 128, 128, 0.9);
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tab">
+        <button class="tablinks" onclick="toggleTab(event, 'About')">About Me</button>
+        <button class="tablinks" onclick="toggleTab(event, 'Projects')">Projects</button>
+        <button class="tablinks" onclick="toggleTab(event, 'Contact')">Contact</button>
+    </div>
+    
+    <div id="About" class="tabcontent">
+        <h2>About Me</h2>
+        <p>Hello! I'm Khadar, a high school student interested in making a small bussiness. This is my personal space on the web to showcase my projects and bussiness ideas.</p>
+    </div>
+
+    <div id="Projects" class="tabcontent">
+        <h2>Projects</h2>
+        <p>Here are some of the projects I've worked on:</p>
+        <ul>
+            <li>BUSINESS IDEA 1 - CUSTOM MATERIAL KEYCHAIN</li>
+            <li>material 1 - Laser Cut Keychains</li> 
+            <li>material 2 - 3D printed Keychains</li>
+            <li>material 3 - fabric Keychains</li>
+            <li>material 4 - acylic/plastic Keychains</li>
+        </ul>
+            
+    </div>
+
+    <div id="Contact" class="tabcontent">
+        <h2>Contact</h2>
+        <p>You can reach me at <a href="mailto:khadarshueb353@gmail.com">khadarshueb353@gmail.com</a></p>
+    </div>
+
+    <div class="centered-message">
+        <h1>Custom Material Keychain</h1>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Khadar. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tabcontent.length; i++) {
+                if (tabcontent[i].id === tabName) {
+                    if (tabcontent[i].style.display === "block") {
+                        tabcontent[i].style.display = "none";
+                        evt.currentTarget.className = evt.currentTarget.className.replace(" active", "");
+                    } else {
+                        tabcontent[i].style.display = "block";
+                        evt.currentTarget.className += " active";
+                    }
+                } else {
+                    tabcontent[i].style.display = "none";
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
